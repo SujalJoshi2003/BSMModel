@@ -24,7 +24,6 @@ The app also visualizes option prices across different **stock price** and **vol
 ---
 
 
----
 
 ## ⚡ How to Run Locally
 1. Clone the repo:
