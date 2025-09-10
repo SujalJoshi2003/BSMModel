@@ -29,8 +29,8 @@ The app also visualizes option prices across different **stock price** and **vol
 ## ⚡ How to Run Locally
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/your-repo-name.git
-   cd your-repo-name
+   git clone https://github.com/SujalJoshi2003/BSMModel.git
+   cd BSMModel
 2.pip install -r requirements.txt
 
 3.streamlit run app.py
