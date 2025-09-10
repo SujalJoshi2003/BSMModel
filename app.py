@@ -4,7 +4,7 @@ from varCoolCal import variationCal
 
 callValue=0
 putValue=0
-stockVar,maturityVar,riskVar,strikeVar,volVar=1,1,1,1,1
+stockVar,maturityVar,riskVar,strikeVar,volVar,divVar=1,1,1,1,1,1
 heatVar = False
 
 st.title("Black Scholes Option Pricing Calculator")
@@ -38,11 +38,12 @@ with st.sidebar:
     strikePrice = st.number_input("Strike Price ", min_value=0.0, value=100.0, step=1.0)
     riskFreeRate = st.number_input("Risk Free Rate (in %) ", min_value=0.0, value=5.0,step=0.1)
     volatility = st.number_input("Volatility (in %) ", min_value=0.0, value=20.0, step=0.1)
-    stockVar,maturityVar,riskVar,strikeVar,volVar=stockPrice,maturity,riskFreeRate,strikePrice,volatility
+    dividendYield = st.number_input("Dividend Yield (in %) ",  value=0.0, step=0.1)
+    stockVar,maturityVar,riskVar,strikeVar,volVar,divVar=stockPrice,maturity,riskFreeRate,strikePrice,volatility,dividendYield
 
     if st.button("Calculate"):
         heatVar = True
-        call, put = inputBasedCalculator(stockPrice, strikePrice, maturity, riskFreeRate/100, volatility/100)
+        call, put = inputBasedCalculator(stockPrice, strikePrice, maturity, riskFreeRate/100, volatility/100,dividendYield/100)
         callValue,putValue=call,put
 
 st.text("")  
@@ -57,5 +58,5 @@ st.text("")
 st.text(f"Heatmap presented with input Stock price : {stockPrice}, and Volatility : {volatility}% , with few different values around it")
 st.info("Note: Heatmap is generated only when Calculate button is pressed")
 if stockVar != 1 and heatVar:
-    variationCal(stockVar,maturityVar,riskVar/100,strikeVar,volVar/100)
+    variationCal(stockVar,maturityVar,riskVar/100,strikeVar,volVar/100,divVar/100)
         

@@ -3,7 +3,7 @@ import plotly.express as px
 from modelcal import inputBasedCalculator
 import streamlit as st
 
-def variationCal(S,T,r,K,sigma):
+def variationCal(S,T,r,K,sigma,d):
     sRange = np.linspace(S - 10, S + 10, 20)
     sigmaRange = np.linspace(sigma - 0.1, sigma + 0.1, 20)
 
@@ -12,7 +12,7 @@ def variationCal(S,T,r,K,sigma):
 
     for i, sigma in enumerate(sigmaRange):
         for j, S in enumerate(sRange):
-            call, put = inputBasedCalculator(S, K, T, r, sigma)
+            call, put = inputBasedCalculator(S, K, T, r, sigma,d)
             call_grid[i, j] = call
             put_grid[i, j] = put
 
