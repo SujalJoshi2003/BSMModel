@@ -1,11 +1,11 @@
-# Black–Scholes Option Pricing App 📈
+# Black–Scholes Option Pricing App 
 
 An interactive **Streamlit web app** that calculates **European Call and Put option prices** using the **Black–Scholes (BS) model**.  
 The app also visualizes option prices across different **stock price** and **volatility** ranges with heatmaps.  
 
 ---
 
-## 🚀 Features
+##  Features
 - Compute **Call & Put prices** with the BSM formula.  
 - Interactive **Streamlit UI** with sidebar inputs.  
 - Generate **heatmaps** showing how option values change:  
@@ -15,7 +15,7 @@ The app also visualizes option prices across different **stock price** and **vol
 
 ---
 
-## 📊 Tech Stack
+##  Tech Stack
 - **Python**
 - **Streamlit** (web app framework)  
 - **NumPy** (numerical calculations)  
@@ -25,7 +25,7 @@ The app also visualizes option prices across different **stock price** and **vol
 
 
 
-## ⚡ How to Run Locally
+##  How to Run Locally
 1. Clone the repo:
    ```bash
    git clone https://github.com/SujalJoshi2003/BSMModel.git
