@@ -34,7 +34,7 @@ with st.sidebar:
     st.text("")
     st.text("")
     stockPrice = st.number_input("Stock Price ", min_value=0.0, value=100.0, step=1.0)
-    maturity = st.number_input("Maturity (in years) ", min_value=0.0, value=1.0, step=0.1)
+    maturity = st.number_input("Maturity (in years) ",  value=1.0, step=0.1)
     strikePrice = st.number_input("Strike Price ", min_value=0.0, value=100.0, step=1.0)
     riskFreeRate = st.number_input("Risk Free Rate (in %) ", min_value=0.0, value=5.0,step=0.1)
     volatility = st.number_input("Volatility (in %) ", min_value=0.0, value=20.0, step=0.1)
