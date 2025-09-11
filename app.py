@@ -1,11 +1,13 @@
 import streamlit as st
 from modelcal import inputBasedCalculator
 from varCoolCal import variationCal
+from greeks import greeksCal
 
 callValue=0
 putValue=0
 stockVar,maturityVar,riskVar,strikeVar,volVar,divVar=1,1,1,1,1,1
 heatVar = False
+
 
 st.title("Black Scholes Option Pricing Calculator")
 
@@ -55,8 +57,12 @@ with col2:
     st.error(f"Put:\n{putValue}")
 
 st.text("")
-st.text(f"Heatmap presented with input Stock price : {stockPrice}, and Volatility : {volatility}% , with few different values around it")
-st.info("Note: Heatmap is generated only when Calculate button is pressed")
-if stockVar != 1 and heatVar:
-    variationCal(stockVar,maturityVar,riskVar/100,strikeVar,volVar/100,divVar/100)
+tabs1,tabs2 = st.tabs(["Heatmap","Greeks"])
+with tabs1:
+    st.text(f"Heatmap presented with input Stock price : {stockPrice}, and Volatility : {volatility}% , with few different values around it")
+    st.info("Note: Heatmap is generated only when Calculate button is pressed")
+    if stockVar != 1 and heatVar:
+        variationCal(stockVar,maturityVar,riskVar/100,strikeVar,volVar/100,divVar/100)
+with tabs2:
+    greeksCal(stockVar,maturityVar,riskVar/100,strikeVar,volVar/100,divVar/100)
         

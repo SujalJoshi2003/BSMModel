@@ -1,0 +1,1 @@
+need python env than install streamlit , and then enter project folder for streamlit run app.py
