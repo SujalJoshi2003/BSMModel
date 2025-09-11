@@ -1,4 +1,4 @@
-# Black–Scholes Option Pricing App 
+# Black–Scholes-Merton Option Pricing App 
 
 An interactive **Streamlit web app** that calculates **European Call and Put option prices** using the **Black–Scholes (BS) model**.  
 The app also visualizes option prices across different **stock price** and **volatility** ranges with heatmaps.  
